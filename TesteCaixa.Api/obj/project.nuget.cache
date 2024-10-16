@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "6XOTkwaWCWsVHgRuJCDi1t4/gjJC/DwwPR5+qQ2rw5rJ4ivwGZOtZ443h5wH9Z/rUbnuk/5H6X0NnBL+WbcTDQ==",
+  "success": true,
+  "projectFilePath": "D:\\projetos\\c#\\TesteCaixa\\TesteCaixa.Api\\TesteCaixa.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dener\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\dener\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\dener\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\dener\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.9.0\\swashbuckle.aspnetcore.annotations.6.9.0.nupkg.sha512",
+    "C:\\Users\\dener\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.9.0\\swashbuckle.aspnetcore.swagger.6.9.0.nupkg.sha512",
+    "C:\\Users\\dener\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.9.0\\swashbuckle.aspnetcore.swaggergen.6.9.0.nupkg.sha512",
+    "C:\\Users\\dener\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

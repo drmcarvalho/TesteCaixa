@@ -1,0 +1,6 @@
+@TesteCaixa.Api_HostAddress = http://localhost:5208
+
+GET {{TesteCaixa.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

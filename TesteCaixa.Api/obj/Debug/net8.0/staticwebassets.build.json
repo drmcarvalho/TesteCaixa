@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "z/a/QNmwWYmBLwmEegFHLGfQJZpdjaoa968X8EOFpD8=",
+  "Source": "TesteCaixa.Api",
+  "BasePath": "_content/TesteCaixa.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

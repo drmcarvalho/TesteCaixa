@@ -1,0 +1,16 @@
+networks:
+  fitconnect:
+    name: fitconnect
+
+services:
+  fitconnect:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: fitconnect    
+    ports:
+      - 8080:8080
+    volumes: 
+      - ./:/app
+    working_dir: /app
+    entrypoint: 'dotnet watch run --project TesteCaixa.Api/TesteCaixa.Api.csproj --urls http://*:8080'    
+    networks:
+      - fitconnect
