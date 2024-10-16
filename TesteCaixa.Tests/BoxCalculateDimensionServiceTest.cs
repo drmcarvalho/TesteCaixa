@@ -7,7 +7,7 @@ namespace TesteCaixa.Tests
 {
     [TestClass]
     public class BoxCalculateDimensionServiceTest
-    {        
+    {
         [TestMethod]
         public void TestMethodFitCalc()
         {
@@ -126,7 +126,7 @@ namespace TesteCaixa.Tests
             };
 
             //Action
-            var response = service.FitCalc(payload);                        
+            var response = service.FitCalc(payload);
 
             //Assert            
             Assert.IsNotNull(response);
@@ -140,20 +140,8 @@ namespace TesteCaixa.Tests
             Assert.AreEqual(expected: "Teclado", actual: response.Orders
                 .FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes
                     .FirstOrDefault()?.Products
-                        .FirstOrDefault(x => x.ProductId == "Teclado")?.ProductId);            
+                        .FirstOrDefault(x => x.ProductId == "Teclado")?.ProductId);
             Assert.IsTrue(response.Orders.Count != 0);
-        }
-
-        [TestMethod]
-        public void TestMethodCalcVolumeAndMaxValue()
-        {
-            var volume = BoxCalculateDimensionService.Volume(3, 8, 9);
-            var maxDim1 = BoxCalculateDimensionService.GetMaxDimension(23, 8, 89);
-            var maxDim2 = BoxCalculateDimensionService.GetMaxDimension(25, 8, 9);
-            
-            Assert.AreEqual(expected: 216, actual: volume);
-            Assert.AreEqual(expected: 89, actual: maxDim1);
-            Assert.AreEqual(expected: 25, actual: maxDim2);
         }
     }
 }

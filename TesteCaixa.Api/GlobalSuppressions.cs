@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "<Pendente>", Scope = "member", Target = "~M:TesteCaixa.Api.ServiceDomain.BoxCalculateDimensionService.Calculate(TesteCaixa.Api.Dtos.Payload.CalcDimensionForOrdersDto)~TesteCaixa.Api.Http.IHttpResponse{TesteCaixa.Api.Dtos.Response.OrdersCalculatedDto}")]
+[assembly: SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "<Pendente>", Scope = "member", Target = "~M:TesteCaixa.Api.ServiceDomain.BoxCalculateDimensionService.FitCalc(TesteCaixa.Api.Dtos.Payload.CalcDimensionForOrdersDto)~TesteCaixa.Api.Dtos.Response.OrdersCalculatedDto")]
