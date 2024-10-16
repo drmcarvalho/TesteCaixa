@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using TesteCaixa.Api.Auth;
 using TesteCaixa.Api.Dtos.Payload;
 using TesteCaixa.Api.Dtos.Response;
 using TesteCaixa.Api.ServiceDomain;
@@ -12,6 +13,7 @@ namespace TesteCaixa.Api.Controllers
     public class OrdersController : ControllerBase
     {        
         [HttpPost]
+        [AuthApiKey]
         [SwaggerOperation(Summary = "Processa os produtos de cada pedido separando por caixa de acordo com as dimensões de cada produto")]
         [ProducesResponseType<OrdersCalculatedDto>(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

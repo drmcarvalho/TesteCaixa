@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using TesteCaixa.Api;
-using static System.Console;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +17,31 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API de Pedidos", Version = "v1" });
+    c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme()
+    {
+        Name = "X-API-KEY",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Description = "Authorization by X-API-KEY inside request's header",
+        Scheme = "ApiKeyScheme"
+    });
+    var key = new OpenApiSecurityScheme()
+    {
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "ApiKey"
+        },
+        In = ParameterLocation.Header
+    };
+    var requirement = new OpenApiSecurityRequirement
+    {
+       { 
+            key, 
+            new List<string>() 
+       }
+    };
+    c.AddSecurityRequirement(requirement);
 });
 
 var app = builder.Build();
@@ -30,6 +54,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
