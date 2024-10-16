@@ -14,13 +14,13 @@ namespace TesteCaixa.Api.ServiceDomain
         public OrdersCalculatedDto FitCalc(CalcDimensionForOrdersDto dto)
         {
             var boxes = _boxRepository.GetAll();
-            var ordersCalculated = new OrdersCalculatedDto();            
+            OrdersCalculatedDto ordersCalculated = new();            
             foreach (var order in dto.Orders) if (order.Products.Count > 0)
             {
-                var orderCalculated = new OrderProcessedDto { OrderId = order.OrderId };                
+                OrderProcessedDto orderCalculated = new() { OrderId = order.OrderId };                
                 foreach (var box in boxes)
                 {
-                    var boxDto = new BoxDto { BoxId = box.BoxId };                    
+                    BoxDto boxDto = new() { BoxId = box.BoxId };                    
                     var volumeBox = Volume(box.Length, box.Width, box.Height);
                     var minDimensionBox = GetMinDimension(box.Length, box.Height, box.Width);
                     foreach (var product in order.Products.ToList()) if (DimensionsIsValid(product.Dimensions!))
