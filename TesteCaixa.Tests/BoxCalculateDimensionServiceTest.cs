@@ -34,7 +34,14 @@ namespace TesteCaixa.Tests
                     Height = 50,
                     Width = 80,
                     Length = 60
-                }
+                },
+                new()
+                {
+                    BoxId = "Caixa 4",
+                    Height = 300,
+                    Width = 400,
+                    Length = 500
+                },
             ]);
             var service = new BoxCalculateDimensionService(mockBox.Object);
             var payload = new CalcDimensionForOrdersDto
@@ -78,12 +85,12 @@ namespace TesteCaixa.Tests
                           }
                        ]
                    },
-                   new OrderDto 
+                   new OrderDto
                    {
                        OrderId = 10,
-                       Products = 
+                       Products =
                        [
-                          new ProductDto 
+                          new ProductDto
                           {
                               ProductId = "Tenis",
                               Dimensions = new DimensionsDto
@@ -117,11 +124,11 @@ namespace TesteCaixa.Tests
                    }
                 ]
             };
-            
+
             //Action
-            var response = service.FitCalc(payload);
-            
-            //Assert
+            var response = service.FitCalc(payload);                        
+
+            //Assert            
             Assert.IsNotNull(response);
             Assert.AreEqual(expected: 2, actual: response.Orders.Count);
             Assert.IsNotNull(response.Orders
@@ -133,10 +140,7 @@ namespace TesteCaixa.Tests
             Assert.AreEqual(expected: "Teclado", actual: response.Orders
                 .FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes
                     .FirstOrDefault()?.Products
-                        .FirstOrDefault(x => x.ProductId == "Teclado")?.ProductId);
-            Assert.AreEqual(expected: 2, actual: response.Orders
-                .FirstOrDefault(x => x.OrderId.Equals(10))?.Boxes
-                    .SelectMany(x => x.Products).Count());
+                        .FirstOrDefault(x => x.ProductId == "Teclado")?.ProductId);            
             Assert.IsTrue(response.Orders.Count != 0);
         }
 

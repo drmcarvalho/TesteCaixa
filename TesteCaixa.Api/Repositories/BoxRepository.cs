@@ -26,7 +26,14 @@ namespace TesteCaixa.Api.Repositories
                     Height = 50,
                     Width = 80,
                     Length = 60
-                }
+                },
+                new()
+                {
+                    BoxId = "Caixa 4",
+                    Height = 300,
+                    Width = 400,
+                    Length = 500
+                },
             ];
     }
 }
