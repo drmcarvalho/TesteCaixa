@@ -23,11 +23,7 @@ namespace TesteCaixa.Api.ServiceDomain
                     var boxDto = new BoxDto { BoxId = box.BoxId };                    
                     var volumeBox = Volume(box.Length, box.Width, box.Height);
                     foreach (var product in order.Products.ToList()) if (DimensionsIsValid(product.Dimensions!))
-                    {
-                        if (orderCalculated.Boxes.Exists(x => x.Products.Exists(p => p.ProductId == product.ProductId)))
-                        {
-                            continue;
-                        }
+                    {                        
                         var volumeProduct = Volume(product.Dimensions!.Length, product.Dimensions.Width, product.Dimensions.Height);
                         if (volumeProduct > volumeBox)
                         {
