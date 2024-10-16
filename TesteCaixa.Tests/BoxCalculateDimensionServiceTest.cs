@@ -9,7 +9,7 @@ namespace TesteCaixa.Tests
     public class BoxCalculateDimensionServiceTest
     {        
         [TestMethod]
-        public void TestMethod()
+        public void TestMethodFitCalc()
         {
             //Arrange
             var mockBox = new Mock<IBoxRepository>();
@@ -120,20 +120,36 @@ namespace TesteCaixa.Tests
             
             //Action
             var response = service.FitCalc(payload);
+            
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.AreEqual(expected: 2, actual: response.Orders.Count);
+            Assert.IsNotNull(response.Orders
+                .FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes);
+            Assert.AreNotEqual("Tenis", actual: response.Orders
+                .FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes
+                    .FirstOrDefault()?.Products
+                        .FirstOrDefault(x => x.ProductId == "Tenis")?.ProductId);
+            Assert.AreEqual(expected: "Teclado", actual: response.Orders
+                .FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes
+                    .FirstOrDefault()?.Products
+                        .FirstOrDefault(x => x.ProductId == "Teclado")?.ProductId);
+            Assert.AreEqual(expected: 2, actual: response.Orders
+                .FirstOrDefault(x => x.OrderId.Equals(10))?.Boxes
+                    .SelectMany(x => x.Products).Count());
+            Assert.IsTrue(response.Orders.Count != 0);
+        }
+
+        [TestMethod]
+        public void TestMethodCalcVolumeAndMaxValue()
+        {
             var volume = BoxCalculateDimensionService.Volume(3, 8, 9);
             var maxDim1 = BoxCalculateDimensionService.GetMaxDimension(23, 8, 89);
             var maxDim2 = BoxCalculateDimensionService.GetMaxDimension(25, 8, 9);
-
-            //Assert
+            
             Assert.AreEqual(expected: 216, actual: volume);
             Assert.AreEqual(expected: 89, actual: maxDim1);
             Assert.AreEqual(expected: 25, actual: maxDim2);
-            Assert.IsNotNull(response);
-            Assert.AreEqual(expected: 2, actual: response.Orders.Count);
-            Assert.IsNotNull(response.Orders.FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes);
-            Assert.AreNotEqual("Tenis", actual: response.Orders.FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes.FirstOrDefault()?.Products.FirstOrDefault(x => x.ProductId == "Tenis")?.ProductId);
-            Assert.AreEqual(expected: "Teclado", actual: response.Orders.FirstOrDefault(x => x.OrderId.Equals(85))?.Boxes.FirstOrDefault()?.Products.FirstOrDefault(x => x.ProductId == "Teclado")?.ProductId);
-            Assert.AreEqual(expected: 2, actual: response.Orders.FirstOrDefault(x => x.OrderId.Equals(10))?.Boxes.SelectMany(x => x.Products).Count());
         }
     }
 }

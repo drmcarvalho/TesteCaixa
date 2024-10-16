@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Minor Code Smell", "S6602:\"Find\" method should be used instead of the \"FirstOrDefault\" extension", Justification = "<Pendente>", Scope = "member", Target = "~M:TesteCaixa.Tests.BoxCalculateDimensionServiceTest.TestMethod")]
+[assembly: SuppressMessage("Minor Code Smell", "S6602:\"Find\" method should be used instead of the \"FirstOrDefault\" extension", Justification = "<Pendente>", Scope = "member", Target = "~M:TesteCaixa.Tests.BoxCalculateDimensionServiceTest.TestMethodFitCalc")]
