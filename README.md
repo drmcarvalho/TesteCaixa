@@ -19,9 +19,9 @@ Para rodar os testes unitários digite:
 dotnet test .\TesteCaixa.Tests\
 ```
 
-# Executando via docker
+Ou se preferir pode executar via Docker seguindo as instruções abaixo.
 
-Digite o comando abaixo:
+Digite o comando:
 ```
 docker compose up
 ```
