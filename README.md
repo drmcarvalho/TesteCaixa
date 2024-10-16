@@ -26,7 +26,7 @@ dotnet test .\TesteCaixa.Tests\ --collect:"XPlat Code Coverage"
 
 E acesse a paste `TesteCaixa.Tests` e digite o comando:
 ```
-reportgenerator -reports:"TestResults\d4d85a3c-b861-489c-8ef9-df1ba8ed1f01\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
+reportgenerator -reports:"TestResults\coloque-GUID-gerado-aqui\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
 ```
 
 O relatório da cobertura de teste vai estar na pasta `coveragereport`, basta abrir o arquivo `index.html` no navegador.
