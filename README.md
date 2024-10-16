@@ -46,7 +46,7 @@ Após executar a aplicação informe esta apikey abaixo usando o botão de Autho
 en7RdTeVJctQzkrADmhTvDJsFcB5MkBGuK3HutbpgzKffNFuKiyQ3CGK5qauwvAETsUTSyWes4T9KRuVnm4JmS1wafJB01VxL7mEiuwzm975CsnxcZvlPQ9AluP1GJ4l
 ```
 
-Caso este usando outro cliente para consumir a requisição é só informar a Apikey no Header 
+Caso estiver usando outro cliente para consumir a requisição é só informar a Apikey no Header 
 ```
 Header {"x-api-key": "en7RdTeVJctQzkrADmhTvDJsFcB5MkBGuK3HutbpgzKffNFuKiyQ3CGK5qauwvAETsUTSyWes4T9KRuVnm4JmS1wafJB01VxL7mEiuwzm975CsnxcZvlPQ9AluP1GJ4l"}
 ```
